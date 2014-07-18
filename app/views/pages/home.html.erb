@@ -1,5 +1,11 @@
 <div class="jumbotron">
 	<h1>Work your Network</h1>
-	<p>Click here to <%= link_to "Sign Up", "#", class: "btn btn-primary"%></p>
-	<small>Already signed up? <%=link_to "Login", "#"%></small>
+	
+	<% if user_signed_in? %>
+		#do something
+	<% else %>
+	<p>Click here to <%=link_to "Sign Up", new_user_registration_path, class: "btn btn-primary"%></p>
+	<small>Already signed up? <%=link_to "Login", new_user_session_path%></small>
+	<% end %>
+
 </div>
