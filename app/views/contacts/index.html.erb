@@ -1,0 +1,36 @@
+<h1>Listing contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Globalid</th>
+      <th>First Name</th>
+      <th>Points</th>
+      <th>User_ID</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td>
+        <% 
+
+        %>
+        <%= %>
+        </td>
+        <td><%= contact.globalID %></td>
+        <td><%= contact.points %></td>
+        <td><%= contact.user_id %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>

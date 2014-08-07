@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801153054) do
+ActiveRecord::Schema.define(version: 20140804203033) do
+
+  create_table "contacts", force: true do |t|
+    t.integer  "globalID"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
+
+  create_table "globalcontacts", force: true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "twitterid"
+    t.string   "linkedin"
+    t.string   "facebook"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Globalid:</strong>
+  <%= @contact.globalID %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @contact.points %>
+</p>
+
+<p>
+  <strong>UserID:</strong>
+  <%= @contact.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
