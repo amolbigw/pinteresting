@@ -2,7 +2,8 @@
 	<h1>Work your Network</h1>
 	
 	<% if user_signed_in? %>
-		#do something
+		<%= link_to "My contacts", contacts_path %> </br>
+		<%= link_to "My contacts details", globalcontacts_path %>
 	<% else %>
 	<p>Click here to <%=link_to "Sign Up", new_user_registration_path, class: "btn btn-primary"%></p>
 	<small>Already signed up? <%=link_to "Login", new_user_session_path%></small>
